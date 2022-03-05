@@ -4,7 +4,7 @@
     <h1>Sınavlar</h1>
 
     <div class="content">
-        @foreach($exams as $exam)
+        @foreach($searchExams as $exam)
             <div class="row">
                 <img src="{{$exam->image_url}}" title="{{$exam->title}}" class="image_list" />
                 <p>

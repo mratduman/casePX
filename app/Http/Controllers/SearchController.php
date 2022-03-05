@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exam;
-use App\Models\Question;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -13,10 +12,10 @@ class SearchController extends Controller
             'search' => 'required'
         ]);
 
-        $exams = Exam::query()
+        $searchExams = Exam::query()
             ->where('title','like','%'.$request->search.'%')
             ->get();
 
-        return view('search', compact('exams'));
+        return view('search', compact('searchExams'));
     }
 }
